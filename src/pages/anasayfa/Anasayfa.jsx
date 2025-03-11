@@ -52,6 +52,7 @@ const Anasayfa = () => {
 
   useEffect(() => {
     if (!loading) {
+      // Ana slider
       const glide = new Glide(".glide", {
         type: "carousel",
         startAt: 0,
@@ -60,27 +61,28 @@ const Anasayfa = () => {
         autoplay: 3000,
       });
 
+      // Postlar için slider
       const glidePosts = new Glide(".glide-posts", {
         type: "carousel",
         autoplay: 2700,
         perView: 4,
         gap: 20,
         breakpoints: {
-          900: {
-            perView: 3,
-          },
-
-          768: {
-            perView: 2,
-          },
-          350: {
-            perView: 1,
-          },
+          900: { perView: 3 },
+          768: { perView: 2 },
+          350: { perView: 1 },
         },
       });
 
+      // Kaydırıcıları başlat
       glide.mount();
       glidePosts.mount();
+
+      // Temizleme işlemi
+      return () => {
+        glide.destroy();
+        glidePosts.destroy();
+      };
     }
   }, [loading]);
 
