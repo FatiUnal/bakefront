@@ -166,7 +166,7 @@ const AdminProjeDuzenle = () => {
       }
 
       setTimeout(() => {
-        navigate("/admin/projeler");
+        navigate("/admin/urunler");
         setIsloading(false);
       }, 500);
     } catch (error) {
@@ -428,7 +428,7 @@ const AdminProjeDuzenle = () => {
 
             <div>
               <label>
-                Content:
+                Kısa Açıklama:
                 <textarea
                   name="titleContent"
                   value={formData.titleContent}
@@ -440,7 +440,7 @@ const AdminProjeDuzenle = () => {
 
             <div>
               <label>
-                Açıklama 1:
+                Uzun Açıklama:
                 <textarea
                   name="content"
                   value={formData.content}

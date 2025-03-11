@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./CardItem.scss";
 const CardItem = ({ title, desc, buttonText, img }) => {
   return (
@@ -7,9 +8,9 @@ const CardItem = ({ title, desc, buttonText, img }) => {
         <div className="text-content">
           <h2>{title}</h2>
           <p>{desc}</p>
-          <a href="#" className="button green-button">
+          <Link to="/urunler" className="button green-button">
             {buttonText}
-          </a>
+          </Link>
         </div>
       </div>
     </div>

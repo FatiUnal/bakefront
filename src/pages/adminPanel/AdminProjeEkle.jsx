@@ -343,7 +343,7 @@ const AdminProjeEkle = () => {
 
             <div>
               <label>
-                Content:
+                Kısa Açıklama:
                 <textarea
                   name="titleContent"
                   value={formData.titleContent}
@@ -355,7 +355,7 @@ const AdminProjeEkle = () => {
 
             <div>
               <label>
-                Açıklama 1:
+                Uzun Açıklama:
                 <textarea
                   name="content"
                   value={formData.content}
