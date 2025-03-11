@@ -34,7 +34,7 @@
           }
 
           .bannerText {
-            width: 80%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             gap: 2rem;
@@ -95,9 +95,9 @@
             z-index: 2;
             position: absolute;
             top: 0;
-            height: 0;
+            left: 0;
             width: 100%;
-            height: 100%;
+            height: auto;
             background-color: black;
             opacity: 0.15;
           }
@@ -105,9 +105,9 @@
             z-index: 2;
             position: absolute;
             top: 0;
-            height: 0;
+            left: 0;
             width: 100%;
-            height: 100%;
+            height: auto;
             background-color: black;
             opacity: 0.5;
           }
