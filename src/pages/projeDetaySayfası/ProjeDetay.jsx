@@ -46,7 +46,7 @@ const ProjeDetay = () => {
         setSelectedImage(response.data.images[0].filename);
         setTimeout(() => {
           setLoading(false);
-        }, 800);
+        }, 500);
 
         console.log(response.data);
       } catch (error) {
@@ -179,7 +179,11 @@ const ProjeDetay = () => {
             <img src="/images/Icon/question-mark.png" alt="" />
             <div className="anaDesc">
               <p>
-              Bake and Bond olarak, her lokmada mutluluk ve samimiyeti hissettiren, taptaze ve el yapımı tatlılar sunmayı amaçlıyoruz. Doğal malzemeler kullanarak hazırladığımız özel tariflerimizle müşterilerimize hem lezzetli hem de güvenilir ürünler sunmak için çalışıyoruz.
+                Bake and Bond olarak, her lokmada mutluluk ve samimiyeti
+                hissettiren, taptaze ve el yapımı tatlılar sunmayı amaçlıyoruz.
+                Doğal malzemeler kullanarak hazırladığımız özel tariflerimizle
+                müşterilerimize hem lezzetli hem de güvenilir ürünler sunmak
+                için çalışıyoruz.
               </p>
             </div>
           </div>

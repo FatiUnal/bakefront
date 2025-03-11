@@ -38,7 +38,7 @@ const ListCardDelete = ({ proje }) => {
         </div>
         <div className="buttonCard">
           <Link
-            to={`/projeler/${proje.id}`}
+            to={`/urunler/${proje.id}`}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -51,7 +51,7 @@ const ListCardDelete = ({ proje }) => {
             </button>
           </div>
 
-          <Link to={`/admin/projeler/${proje.id}`}>
+          <Link to={`/admin/urunler/${proje.id}`}>
             <button className="update">Düzenle</button>
           </Link>
         </div>

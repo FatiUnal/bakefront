@@ -38,7 +38,7 @@ const Anasayfa = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${BASE_URL}/api/v1/post/small?page=0&size=100`
+          `${BASE_URL}/api/v1/post/small?page=0&size=10`
         );
         setProjeler(response.data);
         setLoading(false);
@@ -212,7 +212,7 @@ const Anasayfa = () => {
                   sağlıyoruz.
                 </p>
                 <div className="button">
-                  <Link to={"/projeler"}>Ürünlere Git</Link>
+                  <Link to={"/urunler"}>Ürünlere Git</Link>
                 </div>
               </div>
             </div>
@@ -227,7 +227,7 @@ const Anasayfa = () => {
               title={"Tüm Lezzetlerimizi Görün"}
               desc={"Her şey sizler için"}
             />
-            <Link to={"/projeler"} className="btn-fullImg">
+            <Link to={"/urunler"} className="btn-fullImg">
               Ürünlerimize Git
             </Link>
           </div>
@@ -260,7 +260,7 @@ const Anasayfa = () => {
           <div className="content">
             <Acardion />
             <div className="left">
-              <Baslik title={"İyi iş iyi ekipten çıkar"}/>
+              <Baslik title={"İyi iş iyi ekipten çıkar"} />
 
               <p>
                 Bake and Bond’un arkasındaki tutku dolu hikaye, el yapımı

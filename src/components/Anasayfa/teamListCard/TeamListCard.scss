@@ -53,6 +53,11 @@
         font-weight: 300;
         display: inline-block;
         color: black;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* 3 satır göster */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis; /* Fazla metin için üç nokta */
       }
     }
 

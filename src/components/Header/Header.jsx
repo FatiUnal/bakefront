@@ -73,11 +73,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    className="menu-link"
-                    to="/projeler"
-                    onClick={closeMenu}
-                  >
+                  <Link className="menu-link" to="/urunler" onClick={closeMenu}>
                     Ürünlerimiz
                   </Link>
                 </li>

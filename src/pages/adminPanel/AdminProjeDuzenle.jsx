@@ -11,13 +11,15 @@ const AdminProjeDuzenle = () => {
   const token = localStorage.getItem("authToken");
 
   const [formData, setFormData] = useState({
-    sehir: "",
-    ilce: "",
+    shelfLife: "",
+    netQuantity: "",
     title: "",
-    price: "",
-    sporSalon: false,
+    categoryName: "",
+    type: "bake",
+    animalProduct: "",
+    titleContent: "",
     content: "",
-    context1: "",
+    portion: "",
   });
   const [isLoading, setIsloading] = useState(true);
 
@@ -39,13 +41,15 @@ const AdminProjeDuzenle = () => {
         if (response.status === 200) {
           setFormData((prevState) => ({
             ...prevState,
-            sehir: response.data.postDetails.sehir || "",
-            ilce: response.data.postDetails.ilce || "",
-            title: response.data.title,
-            content: response.data.content,
-            price: response.data.postDetails.fiyat || "",
-            sporSalon: response.data.postDetails.sporSalon || false,
-            context1: response.data.postDetails.context1 || "",
+            shelfLife: response.data.postDetails.shelfLife || "",
+            netQuantity: response.data.postDetails.netQuantity || "",
+            title: response.data.title || "",
+            categoryName: response.data.postDetails.categoryName || "",
+            type: "bake",
+            animalProduct: response.data.postDetails.animalProduct || "",
+            titleContent: response.data.titleContent || "",
+            content: response.data.content || "",
+            portion: response.data.postDetails.portion || "",
           }));
           setImgKapak(response.data.coverImage);
           setImages(response.data.images);
@@ -54,7 +58,7 @@ const AdminProjeDuzenle = () => {
 
           setTimeout(() => {
             setIsloading(false);
-          }, 1000);
+          }, 500);
         }
 
         console.log(response.data);
@@ -164,7 +168,7 @@ const AdminProjeDuzenle = () => {
       setTimeout(() => {
         navigate("/admin/projeler");
         setIsloading(false);
-      }, 1000);
+      }, 500);
     } catch (error) {
       console.log(error);
     }
@@ -357,11 +361,16 @@ const AdminProjeDuzenle = () => {
             <div>
               <label>
                 Kategori:
-                <select name="varlıkTypeDisabled" value={"house"} disabled>
-                  <option value="house">Konut</option>
-                  <option value="land">Arsa</option>
+                <select
+                  onChange={handleChange}
+                  name="categoryName"
+                  value={formData.categoryName}
+                >
+                  <option value="cup">Cup Serisi</option>
+                  <option value="cake">Cake Serisi</option>
+                  <option value="others">Diğerleri</option>
                 </select>
-                <input type="hidden" name="type" value="house" />
+                <input type="hidden" name="type" value="bake" />
               </label>
             </div>
 
@@ -370,8 +379,8 @@ const AdminProjeDuzenle = () => {
                 Miktar (Gr):
                 <input
                   type="text"
-                  name="price"
-                  value={formData.price}
+                  name="netQuantity"
+                  value={formData.netQuantity}
                   onChange={handleChange}
                   required
                 />
@@ -383,8 +392,8 @@ const AdminProjeDuzenle = () => {
                 Raf Ömrü:
                 <input
                   type="text"
-                  name="sehir"
-                  value={formData.sehir}
+                  name="shelfLife"
+                  value={formData.shelfLife}
                   onChange={handleChange}
                   required
                 />
@@ -396,8 +405,8 @@ const AdminProjeDuzenle = () => {
                 Porsiyon:
                 <input
                   type="text"
-                  name="ilce"
-                  value={formData.ilce}
+                  name="portion"
+                  value={formData.portion}
                   onChange={handleChange}
                   required
                 />
@@ -406,12 +415,13 @@ const AdminProjeDuzenle = () => {
 
             <div style={{ margin: "2rem 0rem" }}>
               <label>
-                Hayvansal Ürün Var:
+                Hayvansal Ürün:
                 <input
-                  type="checkbox"
-                  name="sporSalon"
-                  checked={formData.sporSalon}
+                  type="text"
+                  name="animalProduct"
+                  value={formData.animalProduct}
                   onChange={handleChange}
+                  required
                 />
               </label>
             </div>
@@ -420,8 +430,8 @@ const AdminProjeDuzenle = () => {
               <label>
                 Content:
                 <textarea
-                  name="content"
-                  value={formData.content}
+                  name="titleContent"
+                  value={formData.titleContent}
                   onChange={handleChange}
                   required
                 />
@@ -432,8 +442,8 @@ const AdminProjeDuzenle = () => {
               <label>
                 Açıklama 1:
                 <textarea
-                  name="context1"
-                  value={formData.context1}
+                  name="content"
+                  value={formData.content}
                   onChange={handleChange}
                   required
                 />

@@ -4,12 +4,12 @@ import "./ListCard.scss";
 const LİstCard = ({ proje }) => {
   return (
     <div className="projeCard">
-      <Link to={`/projeler/${proje.id}`} className="img">
+      <Link to={`/urunler/${proje.id}`} className="img">
         <img src={proje.coverImage} alt="" />
       </Link>
       <div className="detayCard">
         <div className="desc">
-          <Link to={`/projeler/${proje.id}`} className="title">
+          <Link to={`/urunler/${proje.id}`} className="title">
             <h3>{proje.title}</h3>
           </Link>
           <div className="text">
@@ -17,7 +17,7 @@ const LİstCard = ({ proje }) => {
           </div>
         </div>
         {/* <div className="buttonCard">
-          <Link to={`/projeler/${proje.id}`}>
+          <Link to={`/urunler/${proje.id}`}>
             <button>Ürüne Git</button>
           </Link>
         </div> */}

@@ -20,7 +20,7 @@ const AdminProjeSil = () => {
         setProjeler(response.data);
         setTimeout(() => {
           setIsLoading(false);
-        }, 1000);
+        }, 500);
       } catch (error) {
         console.error("Error fetching data:", error);
       }

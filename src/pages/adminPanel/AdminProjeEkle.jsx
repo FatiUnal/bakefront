@@ -11,13 +11,15 @@ const AdminProjeEkle = () => {
   const [images, setImages] = useState([]);
   const [imgKapak, setImgKapak] = useState(null);
   const [formData, setFormData] = useState({
-    sehir: "",
-    ilce: "",
+    shelfLife: "",
+    netQuantity: "",
     title: "",
-    price: "",
-    sporSalon: false,
+    categoryName: "",
+    type: "bake",
+    animalProduct: "",
+    titleContent: "",
     content: "",
-    context1: "",
+    portion: "",
   });
   const [isLoading, setIsloading] = useState(false);
 
@@ -81,9 +83,9 @@ const AdminProjeEkle = () => {
       }
 
       setTimeout(() => {
-        navigate("/admin/projeler");
+        navigate("/admin/urunler");
         setIsloading(false);
-      }, 1000);
+      }, 500);
     } catch (error) {
       console.log(error);
     }
@@ -274,11 +276,16 @@ const AdminProjeEkle = () => {
             <div>
               <label>
                 Kategori:
-                <select name="varlıkTypeDisabled" value={"house"} disabled>
-                  <option value="house">Konut</option>
-                  <option value="land">Arsa</option>
+                <select
+                  onChange={handleChange}
+                  name="categoryName"
+                  value={formData.categoryName}
+                >
+                  <option value="cup">Cup Serisi</option>
+                  <option value="cake">Cake Serisi</option>
+                  <option value="others">Diğerleri</option>
                 </select>
-                <input type="hidden" name="type" value="house" />
+                <input type="hidden" name="type" value="bake" />
               </label>
             </div>
 
@@ -287,8 +294,8 @@ const AdminProjeEkle = () => {
                 Miktar (Gr):
                 <input
                   type="text"
-                  name="price"
-                  value={formData.price}
+                  name="netQuantity"
+                  value={formData.netQuantity}
                   onChange={handleChange}
                   required
                 />
@@ -300,8 +307,8 @@ const AdminProjeEkle = () => {
                 Raf Ömrü:
                 <input
                   type="text"
-                  name="sehir"
-                  value={formData.sehir}
+                  name="shelfLife"
+                  value={formData.shelfLife}
                   onChange={handleChange}
                   required
                 />
@@ -313,8 +320,21 @@ const AdminProjeEkle = () => {
                 Porsiyon:
                 <input
                   type="text"
-                  name="ilce"
-                  value={formData.ilce}
+                  name="portion"
+                  value={formData.portion}
+                  onChange={handleChange}
+                  required
+                />
+              </label>
+            </div>
+
+            <div style={{ margin: "2rem 0rem" }}>
+              <label>
+                Hayvansal Ürün:
+                <input
+                  type="text"
+                  name="animalProduct"
+                  value={formData.animalProduct}
                   onChange={handleChange}
                   required
                 />
@@ -323,22 +343,10 @@ const AdminProjeEkle = () => {
 
             <div>
               <label>
-                Hayvansal Ürün Var:
-                <input
-                  type="checkbox"
-                  name="sporSalon"
-                  checked={formData.sporSalon}
-                  onChange={handleChange}
-                />
-              </label>
-            </div>
-
-            <div>
-              <label>
                 Content:
                 <textarea
-                  name="content"
-                  value={formData.content}
+                  name="titleContent"
+                  value={formData.titleContent}
                   onChange={handleChange}
                   required
                 />
@@ -349,8 +357,8 @@ const AdminProjeEkle = () => {
               <label>
                 Açıklama 1:
                 <textarea
-                  name="context1"
-                  value={formData.context1}
+                  name="content"
+                  value={formData.content}
                   onChange={handleChange}
                   required
                 />

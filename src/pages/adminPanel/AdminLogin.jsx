@@ -1,10 +1,9 @@
-import { useNavigate, Navigate} from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import "./AdminLogin.scss";
 import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import axios from "axios";
 import { BASE_URL } from "../../config/api";
-
 
 const AdminLogin = () => {
   const [formData, setFormData] = useState({ username: "", password: "" });
@@ -12,7 +11,6 @@ const AdminLogin = () => {
   const { login, isAuthenticated } = useAuth(); // Kullanıcının giriş durumu
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-
 
   // Giriş yapıldıysa doğrudan admin paneline yönlendirme
   if (isAuthenticated) {
@@ -28,7 +26,10 @@ const AdminLogin = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post(`${BASE_URL}/api/v1/auth/login`, formData);
+      const response = await axios.post(
+        `${BASE_URL}/api/v1/auth/login`,
+        formData
+      );
       const token = response.data.token;
 
       if (token) {
@@ -79,14 +80,14 @@ const AdminLogin = () => {
                   <button type="submit" className="btn-card" disabled={loading}>
                     {loading ? "Yükleniyor" : "Giriş Yap"}
                   </button>
-                  {error && <p style={{marginTop:"1rem"}}>{error}</p>}
+                  {error && <p style={{ marginTop: "1rem" }}>{error}</p>}
                 </div>
               </div>
             </form>
           </div>
           <div className="loginSectionRight">
             <div className="title">
-              <h4>Kaya Yapı İnşaat Yönetim Paneli</h4>
+              <h4>Bake & Bond Yönetim Paneli</h4>
             </div>
           </div>
         </div>

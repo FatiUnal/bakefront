@@ -28,7 +28,7 @@ const Projeler = () => {
 
         setTimeout(() => {
           setLoading(false);
-        }, 1000);
+        }, 500);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -41,10 +41,10 @@ const Projeler = () => {
     setSidebarOpen(!sidebarOpen); // Sidebar'ı açma ve kapama işlemi
   };
 
-  const filterByRoomCount = (odaSayisi) => {
-    if (odaSayisi) {
+  const filterByRoomCount = (categoryName) => {
+    if (categoryName) {
       const filtered = projeler.filter(
-        (proje) => proje.odaSayisi === odaSayisi
+        (proje) => proje.categoryName === categoryName
       );
       setFilteredProjects(filtered);
       setSidebarOpen(false);
@@ -80,7 +80,7 @@ const Projeler = () => {
                   </li>
 
                   <li>
-                    <button onClick={() => filterByRoomCount("1+1")}>
+                    <button onClick={() => filterByRoomCount("cup")}>
                       <span>Cup Serisi</span>
                       <ChevronRightOutlinedIcon
                         style={{ color: "black", fontSize: "1rem" }}
@@ -89,7 +89,7 @@ const Projeler = () => {
                   </li>
 
                   <li>
-                    <button onClick={() => filterByRoomCount("2+1")}>
+                    <button onClick={() => filterByRoomCount("cake")}>
                       <span>Cake Serisi</span>
                       <ChevronRightOutlinedIcon
                         style={{ color: "black", fontSize: "1rem" }}
@@ -98,7 +98,7 @@ const Projeler = () => {
                   </li>
 
                   <li>
-                    <button onClick={() => filterByRoomCount("3+1")}>
+                    <button onClick={() => filterByRoomCount("others")}>
                       <span>Diğerleri</span>
                       <ChevronRightOutlinedIcon
                         style={{ color: "black", fontSize: "1rem" }}
@@ -146,7 +146,7 @@ const Projeler = () => {
             </div>
 
             <Pagination
-              itemsPerPage={2}
+              itemsPerPage={6}
               items={filteredProjects}
               setCurrentItems={setCurrentItems}
             />

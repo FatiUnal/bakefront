@@ -26,12 +26,12 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Anasayfa />} />
-        <Route path="/projeler" element={<Projeler />} />
-        <Route path="/projeler/:id" element={<ProjeDetay />} />
+        <Route path="/urunler" element={<Projeler />} />
+        <Route path="/urunler/:id" element={<ProjeDetay />} />
         <Route path="/iletisim" element={<Iletisim />} />
         <Route path="/hakkimizda" element={<Hakkimizda />} />
         <Route path="/admin-login" element={<AdminLogin />} />
-        
+
         <Route
           path="/admin"
           element={
@@ -41,8 +41,8 @@ function App() {
           }
         >
           <Route path="ekle" element={<AdminProjeEkle />} />
-          <Route path="projeler" element={<AdminProjeler />} />
-          <Route path="projeler/:id" element={<AdminProjeDuzenle />} />
+          <Route path="urunler" element={<AdminProjeler />} />
+          <Route path="urunler/:id" element={<AdminProjeDuzenle />} />
         </Route>
         <Route path="/unauthorized" element={<Unauthorized />} />
       </Routes>
