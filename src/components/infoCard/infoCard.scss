@@ -1,0 +1,56 @@
+.infoCard {
+  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
+  // border: 1px solid #d1d7dc;
+  padding: 10px;
+  border-radius: 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  .iconCard {
+    width: 2.125rem;
+    height: 2.125rem;
+  }
+  span {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 0.9rem; /* Bu, genelde body1 için varsayılan boyuttur */
+    font-weight: normal; /* Genellikle normal (400) ağırlık */
+    line-height: 1.5; /* Okunabilirliği artırmak için */
+    letter-spacing: 0; /* Harf aralığı */
+  }
+  .textCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+  }
+
+  @media (max-width: 1024px) {
+  }
+  @media (max-width: 768px) {
+    padding: 15px;
+    border-radius: 10px;
+
+    .iconCard {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    span {
+      font-size: 0.75rem;
+    }
+  }
+
+  @media (max-width: 420px) {
+    padding: 10px;
+
+    .iconCard {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  }
+}

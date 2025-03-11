@@ -1,0 +1,50 @@
+.postSlide {
+  border-radius: 15px;
+    position: relative;
+    height: 230px;
+  }
+  
+  .postSlide img {
+    border-radius: 15px;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .postSlide .bottomBar {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+
+  }
+
+  @media (max-width: 1024px) {
+    .postSlide {
+      height: 150px;
+    }
+    .postSlide h3 {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .postSlide {
+      height: 190px;
+    }
+    .postSlide h3 {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .postSlide {
+      height: 150px;
+    }
+    
+  }

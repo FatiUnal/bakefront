@@ -1,0 +1,653 @@
+.anasayfa {
+  margin-top: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+
+  @media (max-width: 1024px) {
+    gap: 4rem;
+  }
+
+  .glide {
+    width: 100%;
+    .glide__track {
+      .glide__slides {
+        .glide__slide {
+          position: relative;
+          width: 100%;
+          height: calc(100vh - 140px);
+
+          @media (max-width: 1024px) {
+            aspect-ratio: 16 / 9; /* En-boy oranını 16:9 yap */
+            height: 100%;
+            object-fit: cover;
+          }
+
+          @media (max-width: 768px) {
+            aspect-ratio: 8 / 6; /* En-boy oranını 16:9 yap */
+            height: 100%;
+            object-fit: cover;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+
+          .bannerText {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            z-index: 3;
+            position: absolute;
+            top: 50%;
+            transform: translate(0%, -50%);
+
+            .location {
+              display: inline-block;
+              max-width: max-content; /* İçerik boyutuna tam oturur */
+              box-sizing: border-box;
+              background-color: whitesmoke;
+              color: black;
+              padding: 15px;
+
+              span {
+                color: orange;
+              }
+
+              @media (max-width: 1024px) {
+                padding: 10px;
+                .adres,
+                span {
+                  font-size: 0.8rem;
+                }
+              }
+
+              @media (max-width: 768px) {
+                display: none;
+                padding: 8px;
+                .adres,
+                span {
+                  font-size: 0.6rem;
+                }
+              }
+            }
+            .title {
+              h1 {
+                color: whitesmoke;
+                font-size: 3.5rem;
+
+                @media (max-width: 1024px) {
+                  font-size: 3rem;
+                }
+
+                @media (max-width: 768px) {
+                  font-size: 1.5rem;
+                }
+              }
+              h3 {
+                color: whitesmoke;
+              }
+            }
+          }
+
+          .background {
+            z-index: 2;
+            position: absolute;
+            top: 0;
+            height: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 0.15;
+          }
+          .backgroundtwo {
+            z-index: 2;
+            position: absolute;
+            top: 0;
+            height: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+
+  .product-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+
+  .populerProject {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    height: auto;
+
+    .mobileTitle {
+      @media (min-width: 1025px) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
+
+    .subDetay {
+      width: 100%;
+      display: flex;
+      gap: 2rem;
+      height: 100%;
+      align-items: center;
+
+      @media (max-width: 1024px) {
+        flex-direction: column;
+        align-items: start;
+
+        .adres {
+          font-size: 3rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .adres {
+          font-size: 1.5rem;
+        }
+      }
+
+      .imgContainer {
+        width: 40%;
+        height: 500px;
+        border-radius: 15px;
+
+        .seccond {
+          display: none;
+        }
+
+        @media (max-width: 1024px) {
+          .first {
+            display: none;
+          }
+          .seccond {
+            display: block;
+          }
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 15px;
+        }
+
+        @media (max-width: 1024px) {
+          width: 100%;
+          height: 100%;
+          aspect-ratio: 16 / 9; /* En-boy oranını 16:9 yap */
+        }
+      }
+
+      .textContainer {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+        @media (max-width: 1024px) {
+          width: 100%;
+        }
+
+        h1 {
+          font-size: 3rem;
+
+          @media (max-width: 1024px) {
+            font-size: 1.5rem;
+          }
+        }
+
+        @media (max-width: 1024px) {
+          .adres {
+            font-size: 1.5rem;
+            margin-bottom: -2rem;
+          }
+        }
+
+        p {
+          font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+          font-weight: 400;
+          line-height: 1.5;
+          letter-spacing: 0px;
+          text-decoration: none;
+
+          @media (max-width: 1024px) {
+            font-size: 0.8rem;
+          }
+        }
+
+        a {
+          padding: 12px 15px 12px 15px;
+          color: whitesmoke;
+          background-color: black;
+          border-radius: 8px;
+
+          @media (max-width: 1024px) {
+            padding: 12px 15px 12px 15px;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+
+  .bestTeam {
+    width: 100%;
+    .content {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+
+      .left {
+        width: calc(30% - 4rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        @media (max-width: 1024px) {
+          align-items: self-center;
+        }
+      }
+
+      .TeamlistCards {
+        position: relative;
+        width: 70%;
+      }
+
+      @media (max-width: 1024px) {
+        margin-bottom: 1rem;
+        flex-direction: column;
+        .left,
+        .TeamlistCards {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 500px) {
+        gap: 2.5rem;
+        hr {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .fullImg {
+    background-image: url("/images/slider/arkaSliderBake.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @supports (-webkit-overflow-scrolling: touch) {
+      background-attachment: scroll; /* iOS'ta fixed yerine scroll kullanılır */
+    }
+
+    .fullImgContent {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      gap: 2rem;
+
+      .btn-fullImg {
+        background-color: black;
+        color: whitesmoke;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 0.85rem;
+      }
+
+      .anaTitle {
+        color: white;
+        .title {
+          display: flex;
+          justify-content: end;
+        }
+        .desc {
+          display: flex;
+          justify-content: end;
+        }
+      }
+    }
+  }
+
+  .whoUsing {
+    background: linear-gradient(to right, black, #315345);
+    width: 100%;
+    padding: 4rem;
+
+    .content {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+
+      .left {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        .anaTitle {
+          color: whitesmoke;
+
+          .title {
+            text-align: start;
+          }
+          .desc {
+            text-align: start;
+          }
+        }
+        p {
+          font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+          font-size: 0.95rem; /* Bu, genelde body1 için varsayılan boyuttur */
+          font-weight: normal; /* Genellikle normal (400) ağırlık */
+          line-height: 1.5; /* Okunabilirliği artırmak için */
+          letter-spacing: 0; /* Harf aralığı */
+          color: whitesmoke;
+        }
+      }
+      .acardion-template {
+        width: 60%;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      padding: 2rem;
+
+      .content {
+        flex-direction: column;
+        gap: 4rem;
+
+        .left,
+        .acardion-template {
+          width: 100%;
+        }
+      }
+    }
+
+    @media (max-width: 468px) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+
+      .anaTitle {
+        display: none;
+      }
+
+      p {
+        font-size: 0.8rem !important;
+      }
+    }
+  }
+
+  .altKısım {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+
+    .anaBaslik {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      .anaTitle {
+        font-weight: 600;
+        font-size: 32px;
+        padding: 8px 0 7px;
+        line-height: 1.125;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      img {
+        width: 60px;
+        height: 60px;
+      }
+
+      .anaDesc {
+        p {
+          margin: 0;
+          font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+          font-weight: 400;
+          line-height: 1.5;
+          letter-spacing: 0.00938em;
+          margin-bottom: 0.35em;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .anaTitle {
+          font-size: 1.8rem;
+        }
+
+        img {
+          width: 50px;
+          height: 50px;
+        }
+
+        .anaDesc {
+          p {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+
+    .glide-posts {
+      .glide__track {
+        .glide__slides {
+          .glide__slide {
+            .postSlide {
+              position: relative;
+              height: 230px;
+
+              img {
+                height: 100%;
+                width: 100%;
+                border-radius: 15px;
+              }
+
+              .bottomBar {
+                border-bottom-right-radius: 15px;
+                border-bottom-left-radius: 15px;
+                position: absolute;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.65);
+                color: #fff;
+                padding: 15px;
+                width: 100%;
+                text-align: center;
+              }
+            }
+
+            @media (max-width: 768px) {
+              .postSlide {
+                h3 {
+                  font-size: 0.8rem;
+                }
+              }
+            }
+
+            @media (max-width: 500px) {
+              .postSlide {
+                height: 150px;
+
+                h3 {
+                  font-size: 0.8rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .slider {
+    margin-top: 1rem;
+    overflow: hidden;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px;
+    position: relative;
+    .slider-track {
+      display: flex;
+      animation: scroll 70s linear infinite;
+      width: max-content;
+      .slide {
+        flex: 0 0 auto;
+        width: 100px; /* Her bir logonun genişliği */
+        margin-right: 20px;
+        img {
+          border-radius: 10px;
+          max-width: 100%;
+          aspect-ratio: 1 / 1; /* En-boy oranını 16:9 yap */
+        }
+      }
+    }
+
+    @keyframes scroll {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+  }
+
+  .sikcaSorulan {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    .acardions {
+      display: flex;
+      flex-direction: column;
+
+      p {
+        font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+        font-size: 0.9rem; /* Bu, genelde body1 için varsayılan boyuttur */
+        font-weight: normal; /* Genellikle normal (400) ağırlık */
+        line-height: 1.5; /* Okunabilirliği artırmak için */
+        letter-spacing: 0; /* Harf aralığı */
+      }
+
+      .acardion {
+        margin-bottom: 3px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+        background-color: white;
+        transition: transform 2.3s ease;
+
+        &.active {
+          .acardionDetails {
+            max-height: 1000px; /* Yeterince yüksek bir değer */
+            display: block;
+            padding: 20px;
+            transition: max-height 0.5s ease-out, padding 0.3s ease-out;
+            overflow: hidden;
+          }
+
+          .expandIcon {
+            transform: rotate(45deg);
+          }
+        }
+
+        .acardionSummary {
+          padding: 20px;
+          background-color: #f9f9f9;
+          cursor: pointer;
+          font-weight: 600;
+          font-size: 14px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .expandIcon {
+            font-size: 16px;
+            transition: transform 0.3s ease;
+          }
+        }
+
+        .acardionDetails {
+          padding: 0 20px;
+          background-color: white;
+          border-top: 1px solid #ddd;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.5s ease-out, padding 0.3s ease-out;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .sikcaSorulan {
+      .anaTitle {
+        align-items: self-center;
+        .title {
+          text-align: center;
+        }
+        .desc {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 110px;
+    .sikcaSorulan {
+      .acardions {
+        p {
+          font-size: 0.75rem;
+        }
+
+        .acardion {
+          .acardionSummary {
+            padding: 15px;
+          }
+          .acardionDetails {
+            padding: 15px;
+          }
+        }
+      }
+    }
+  }
+}

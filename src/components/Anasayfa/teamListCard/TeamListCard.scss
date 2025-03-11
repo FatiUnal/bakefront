@@ -1,0 +1,69 @@
+.card {
+  border-radius: 15px;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+
+  .img {
+    width: 100%;
+    height: 8.7rem;
+
+    @media (max-width: 780px) {
+      height: 11rem;
+    }
+
+    @media (max-width: 500px) {
+      height: 13rem;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+  }
+
+  .cardSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+
+    .CardTop {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      h4 {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-clamp: 2; /* Modern browsers için */
+        -webkit-line-clamp: 2; /* Safari ve eski tarayıcılar için */
+        white-space: normal;
+      }
+
+      p {
+        font-size: 14px;
+        font-style: initial;
+        font-weight: 300;
+        display: inline-block;
+        color: black;
+      }
+    }
+
+    .CardBottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .price {
+        font-size: 20px;
+      }
+    }
+  }
+}
