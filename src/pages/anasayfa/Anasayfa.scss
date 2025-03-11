@@ -97,22 +97,25 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: auto;
+            height: 100%;
             background-color: black;
-            opacity: 0.15;
-          }
-          .backgroundtwo {
-            z-index: 2;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: auto;
-            background-color: black;
-            opacity: 0.5;
+            opacity: 0.35;
+            @media (max-width: 1024px) {
+              aspect-ratio: 16 / 9; /* En-boy oranını 16:9 yap */
+              height: 100%;
+            }
+
+            @media (max-width: 768px) {
+              aspect-ratio: 8 / 6; /* En-boy oranını 16:9 yap */
+              height: 100%;
+            }
           }
         }
       }
+    }
+
+    @media (max-width: 768px) {
+      margin-top: 1rem;
     }
   }
 
