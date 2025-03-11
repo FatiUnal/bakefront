@@ -12,11 +12,10 @@
     width: 100%;
     .glide__track {
       .glide__slides {
-        height: calc(100vh - 140px);
         .glide__slide {
           position: relative;
           width: 100%;
-          height: 100%;
+          height: calc(100vh - 140px);
 
           @media (max-width: 1024px) {
             aspect-ratio: 16 / 9; /* En-boy oranını 16:9 yap */
@@ -33,6 +32,7 @@
           img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
           }
 
           .bannerText {
