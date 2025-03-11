@@ -2,8 +2,8 @@ import "./Anasayfa.scss";
 import { useEffect, useState } from "react";
 import Glide from "@glidejs/glide";
 
-import img1 from "/images/slider/kapak1.jpg";
-import img3 from "/images/slider/kapak3.jpg";
+import img1 from "/images/slider/kapak1.jpeg";
+import img3 from "/images/slider/kapak3.jpeg";
 import img2 from "/images/slider/kapak2.jpeg";
 
 import cake from "/images/anasayfa/cake.jpg";
@@ -145,7 +145,6 @@ const Anasayfa = () => {
                   </div>
                 </div>
               </div>
-              <div className="background"></div>
             </li>
             <li className="glide__slide">
               <img src={img3} alt="Slide 1" />
