@@ -4,7 +4,7 @@ import Glide from "@glidejs/glide";
 
 import img1 from "/images/slider/kapak1.jpg";
 import img3 from "/images/slider/kapak3.jpg";
-import img2 from "/images/slider/slider2.png";
+import img2 from "/images/slider/kapak2.jpeg";
 
 import cake from "/images/anasayfa/cake.jpg";
 import cheesecake from "/images/anasayfa/cheesecake.jpg";
