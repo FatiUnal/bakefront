@@ -18,10 +18,13 @@ const Pagination = ({ itemsPerPage, items, setCurrentItems }) => {
     setItemOffset(0); // Filtreleme sonrası ilk sayfaya dön
   }, [items]);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [itemOffset]);
+
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % items.length;
     setItemOffset(newOffset);
-    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
