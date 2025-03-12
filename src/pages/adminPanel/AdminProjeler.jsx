@@ -14,7 +14,7 @@ const AdminProjeSil = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${BASE_URL}/api/v1/post/small?page=0&size=10`
+          `${BASE_URL}/api/v1/post/small?page=0&size=1000`
         );
         console.log("Data:", response.data); // Çekilen veriler burada
         setProjeler(response.data);
@@ -46,7 +46,7 @@ const AdminProjeSil = () => {
             ))}
 
             <Pagination
-              itemsPerPage={2}
+              itemsPerPage={8}
               items={projeler}
               setCurrentItems={setCurrentItems}
             />

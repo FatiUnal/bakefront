@@ -1,14 +1,11 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./MrGlide.scss";
 import Glide from "@glidejs/glide";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
-
 const MrGlide = ({ onImageClick, images }) => {
-
   const [activeIndex, setActiveIndex] = useState(0);
-
 
   const handleImageClick = (index) => {
     setActiveIndex(index);
@@ -19,10 +16,10 @@ const MrGlide = ({ onImageClick, images }) => {
     new Glide(".glideResim", {
       type: "slider",
       startAt: 0,
-      perView: 4,
+      perView: 5,
       breakpoints: {
         1024: {
-          perView: 3, 
+          perView: 4,
         },
         768: { perView: 1 },
       },
@@ -33,14 +30,19 @@ const MrGlide = ({ onImageClick, images }) => {
     <div className="glideResim">
       <div className="glide__track" data-glide-el="track">
         <ul className="glide__slides">
-        {images.map((image, index) => (
+          {images.map((image, index) => (
             <li
               key={index}
-              className={`glide__slide ${index === activeIndex ? "active" : ""}`}
+              className={`glide__slide ${
+                index === activeIndex ? "active" : ""
+              }`}
               onClick={() => handleImageClick(index)}
               style={{
                 cursor: "pointer",
-                border: window.innerWidth < "768px" && index === activeIndex ? "2px solid black" : "none",
+                border:
+                  window.innerWidth < "768px" && index === activeIndex
+                    ? "2px solid black"
+                    : "none",
               }}
             >
               <img src={image.filename} alt={`slide-${index}`} />

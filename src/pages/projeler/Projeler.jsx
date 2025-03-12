@@ -146,7 +146,7 @@ const Projeler = () => {
             </div>
 
             <Pagination
-              itemsPerPage={6}
+              itemsPerPage={8}
               items={filteredProjects}
               setCurrentItems={setCurrentItems}
             />

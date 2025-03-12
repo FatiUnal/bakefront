@@ -131,6 +131,7 @@ const ProjeDetay = () => {
               <div className="single-img">
                 <img src={selectedImage} alt="Selected Product" />
               </div>
+
               <div className="product-thump">
                 <MrGlide
                   images={proje.images}
@@ -179,11 +180,9 @@ const ProjeDetay = () => {
             <img src="/images/Icon/question-mark.png" alt="" />
             <div className="anaDesc">
               <p>
-                Bake and Bond olarak, her lokmada mutluluk ve samimiyeti
-                hissettiren, taptaze ve el yapımı tatlılar sunmayı amaçlıyoruz.
-                Doğal malzemeler kullanarak hazırladığımız özel tariflerimizle
-                müşterilerimize hem lezzetli hem de güvenilir ürünler sunmak
-                için çalışıyoruz.
+                Bake and Bond olarak, her pastayı özenle ve en taze malzemelerle
+                hazırlıyoruz. Özel tariflerimizle lezzeti zirveye taşırken,
+                kişiye özel tasarımlarımızla unutulmaz anlar yaratıyoruz.
               </p>
             </div>
           </div>
@@ -214,10 +213,7 @@ const ProjeDetay = () => {
         <div className="container">
           <div className="content">
             <div className="left">
-              <Baslik
-                title="Diğer Projelerimiz"
-                desc="Sizler için listeledik"
-              />
+              <Baslik title="Diğer Ürünlerimiz" desc="Sizler için listeledik" />
             </div>
             <div className="projects">
               <ProjelerGlide

@@ -14,7 +14,7 @@
 
     .product-image {
       width: 50%;
-      height: 150px;
+      aspect-ratio: 5 / 4;
       border-radius: 10px;
     }
 
@@ -56,7 +56,7 @@
   @media (max-width: 768px) {
     .card-content {
       .product-image {
-        height: 120px;
+        // height: 120px;
       }
 
       .text-content {

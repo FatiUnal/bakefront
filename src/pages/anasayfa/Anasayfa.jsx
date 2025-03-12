@@ -2,9 +2,9 @@ import "./Anasayfa.scss";
 import { useEffect, useState } from "react";
 import Glide from "@glidejs/glide";
 
-import img1 from "/images/slider/kapak1.jpeg";
-import img3 from "/images/slider/kapak3.jpeg";
-import img2 from "/images/slider/kapak2.jpeg";
+import img1 from "/images/slider/kapak4.jpeg";
+import img3 from "/images/slider/kapak5.jpeg";
+import img2 from "/images/slider/kapak6.jpeg";
 
 import cake from "/images/anasayfa/cake.jpg";
 import cheesecake from "/images/anasayfa/cheesecake.jpg";
@@ -38,7 +38,7 @@ const Anasayfa = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${BASE_URL}/api/v1/post/small?page=0&size=10`
+          `${BASE_URL}/api/v1/post/small?page=0&size=5`
         );
         setProjeler(response.data);
         setLoading(false);
@@ -201,13 +201,7 @@ const Anasayfa = () => {
                 </h1>
 
                 <p className="desc">
-                  🛎️ Restoran, kafe ve otellere tatlı, cookie ve pasta üretimi!
-                  <br />
-                  🍰 El emeği tadında, seri üretim kalitesinde
-                </p>
-
-                <p className="desc">
-                  🎂 El yapımı özen, endüstriyel üretim gücüyle buluşuyor! Her
+                  🎂 El yapımı; özen, endüstriyel üretim gücüyle buluşuyor! Her
                   zevke hitap eden lezzetlerimizle, menülerinizi
                   zenginleştiriyor ve misafirlerinize unutulmaz tatlar sunmanızı
                   sağlıyoruz.
@@ -284,8 +278,6 @@ const Anasayfa = () => {
                 Bake and Bond olarak, her pastayı özenle ve en taze malzemelerle
                 hazırlıyoruz. Özel tariflerimizle lezzeti zirveye taşırken,
                 kişiye özel tasarımlarımızla unutulmaz anlar yaratıyoruz.
-                Kalite, lezzet ve müşteri memnuniyeti bizim için her zaman
-                önceliklidir.
               </p>
             </div>
           </div>

@@ -281,6 +281,7 @@ const AdminProjeEkle = () => {
                   name="categoryName"
                   value={formData.categoryName}
                 >
+                  <option value="">Seri Seçiniz</option>
                   <option value="cup">Cup Serisi</option>
                   <option value="cake">Cake Serisi</option>
                   <option value="others">Diğerleri</option>
