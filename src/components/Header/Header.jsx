@@ -60,7 +60,7 @@ const Header = () => {
             <Link className="logo" to="/">
               <img
                 style={{ borderRadius: "5px" }}
-                src="/images/logo/logoBake.png"
+                src="/images/logo/logoBakeSon.png"
                 alt=""
               />
             </Link>
