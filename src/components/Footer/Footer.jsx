@@ -51,12 +51,17 @@ const Footer = () => {
 
                 <a href="tel:+905061671255">
                   <span style={{ marginRight: "-0.5rem" }} className="ici">
-                    +90 506 167 12 55  /
+                    +90 506 167 12 55
                   </span>
-                  <span style={{ marginRight: "-0.5rem" }} className="ici">
+                </a>
+                <span>  /</span>
+                <a href="tel:+905316457947">
+                <span style={{ marginRight: "-0.5rem" }} className="ici">
                     +90 531 645 79 47
                   </span>
                 </a>
+                
+                
               </div>
             </li>
 
