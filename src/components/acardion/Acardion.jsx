@@ -1,7 +1,7 @@
 import "./Acardion.scss";
 
-import image2 from "/images/acardion/sheff1.jpeg";
-import image3 from "/images/acardion/sheff2.jpg";
+import image2 from "/images/acardion/dilarahanim.jpeg";
+import image3 from "/images/acardion/zeynephanim.jpeg";
 
 function Acardion() {
   return (

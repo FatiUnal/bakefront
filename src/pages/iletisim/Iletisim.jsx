@@ -32,12 +32,11 @@ const Iletisim = () => {
               <h3>Telefon Numaralarımız</h3>
               <div className="itemList">
                 <LocalPhoneIcon />
-                <p>
-                  <a href="tel:+905061671255">+90 506 167 12 55 / </a>
+                <p className="phoness">
+                  <a href="tel:+905061671255">+90 506 167 12 55</a>
                   <a href="tel:+905316457947">+90 531 645 79 47</a>
                 </p>
               </div>
-              
             </div>
 
             <div className="itemIletisim">
