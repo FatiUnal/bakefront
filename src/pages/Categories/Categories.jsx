@@ -2,10 +2,10 @@ import Baslik from "../../components/baslik/Baslik";
 import CategoryCard from "../../components/CategoryCard/CategoryCard";
 import "./Categories.scss";
 
-import bakeandseries from "/images/kategoriResimleri/bakeandseries.jpg";
-import cakeseries from "/images/kategoriResimleri/cakeseries.jpg";
-import cheesecakeseries from "/images/kategoriResimleri/cheesecakeseries.jpg";
-import cupsries from "/images/kategoriResimleri/cupsries.jpg";
+import bakeandseries from "/images/kategoriResimleri/bakeand.jpeg";
+import cakeseries from "/images/kategoriResimleri/cake.jpeg";
+import cheesecakeseries from "/images/kategoriResimleri/cheseecake.jpeg";
+import cupsries from "/images/kategoriResimleri/cup.jpeg";
 
 const Categories = () => {
   return (
