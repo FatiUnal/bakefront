@@ -168,12 +168,14 @@ const Anasayfa = () => {
             title={"Cheesecake'ler"}
             desc={"Bake And 'Cheese' ile lezzeti keşfedin"}
             buttonText={"Tümünü Gör"}
+            link={"cheesecake"}
             img={cheesecake}
           />
           <CardItem
             title={"Cake Şöleni"}
             desc={"Bake And 'Cake' serisini bir deneyimleyin deriz."}
             buttonText={"Tümünü Gör"}
+            link={"cake"}
             img={cake}
           />
         </div>
@@ -207,7 +209,7 @@ const Anasayfa = () => {
                   sağlıyoruz.
                 </p>
                 <div className="button">
-                  <Link to={"/urunler"}>Ürünlere Git</Link>
+                  <Link to={"/kategoriler"}>Ürünlere Git</Link>
                 </div>
               </div>
             </div>
@@ -222,7 +224,7 @@ const Anasayfa = () => {
               title={"Tüm Lezzetlerimizi Görün"}
               desc={"Her şey sizler için"}
             />
-            <Link to={"/urunler"} className="btn-fullImg">
+            <Link to={"/kategoriler"} className="btn-fullImg">
               Ürünlerimize Git
             </Link>
           </div>

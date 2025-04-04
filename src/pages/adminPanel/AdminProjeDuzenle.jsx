@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { BASE_URL } from "../../config/api";
 import Loading from "../loading/Loading";
+import pdfImg from "/images/Icon/adobePDF.webp";
 
 const AdminProjeDuzenle = () => {
   const navigate = useNavigate();
@@ -11,14 +12,10 @@ const AdminProjeDuzenle = () => {
   const token = localStorage.getItem("authToken");
 
   const [formData, setFormData] = useState({
-    shelfLife: "",
-    netQuantity: "",
     title: "",
     categoryName: "",
     type: "bake",
-    animalProduct: "",
     titleContent: "",
-    content: "",
     portion: "",
   });
   const [isLoading, setIsloading] = useState(true);
@@ -41,15 +38,11 @@ const AdminProjeDuzenle = () => {
         if (response.status === 200) {
           setFormData((prevState) => ({
             ...prevState,
-            shelfLife: response.data.postDetails.shelfLife || "",
-            netQuantity: response.data.postDetails.netQuantity || "",
+
             title: response.data.title || "",
             categoryName: response.data.postDetails.categoryName || "",
             type: "bake",
-            animalProduct: response.data.postDetails.animalProduct || "",
             titleContent: response.data.titleContent || "",
-            content: response.data.content || "",
-            portion: response.data.postDetails.portion || "",
           }));
           setImgKapak(response.data.coverImage);
           setImages(response.data.images);
@@ -226,11 +219,10 @@ const AdminProjeDuzenle = () => {
                 }}
                 className="baslikAndButton"
               >
-                <h4>Ürün Resimlerini Düzenle</h4>
+                <h4>Ürün PDF'ini Düzenle</h4>
                 <input
                   type="file"
-                  accept="image/*"
-                  multiple
+                  accept="application/pdf"
                   onChange={handleImageUpload}
                   className="upload-input"
                   id="file-input"
@@ -248,9 +240,7 @@ const AdminProjeDuzenle = () => {
                       borderRadius: "5px",
                     }}
                   >
-                    {images.length > 0
-                      ? `Resim Ekle: ${images.length}`
-                      : "Resim Seç"}
+                    PDF Seç
                   </label>
                 </div>
               </div>
@@ -258,10 +248,7 @@ const AdminProjeDuzenle = () => {
               <div className="images-preview-container">
                 {images.map((image, index) => (
                   <div key={index} className="image-container">
-                    <img
-                      src={image.filename || URL.createObjectURL(image)}
-                      alt={`Uploaded Preview ${index}`}
-                    />
+                    <img src={pdfImg} alt={`Uploaded Preview ${index}`} />
                     <button
                       type="button"
                       className="remove-button"
@@ -369,61 +356,10 @@ const AdminProjeDuzenle = () => {
                   <option value="">Seri Seçiniz</option>
                   <option value="cup">Cup Serisi</option>
                   <option value="cake">Cake Serisi</option>
-                  <option value="others">Diğerleri</option>
+                  <option value="cheesecake">Cake Serisi</option>
+                  <option value="bakeand">Bake And Serisi</option>
                 </select>
                 <input type="hidden" name="type" value="bake" />
-              </label>
-            </div>
-
-            <div>
-              <label>
-                Miktar (Gr):
-                <input
-                  type="text"
-                  name="netQuantity"
-                  value={formData.netQuantity}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
-            </div>
-
-            <div>
-              <label>
-                Raf Ömrü:
-                <input
-                  type="text"
-                  name="shelfLife"
-                  value={formData.shelfLife}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
-            </div>
-
-            <div>
-              <label>
-                Porsiyon:
-                <input
-                  type="text"
-                  name="portion"
-                  value={formData.portion}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
-            </div>
-
-            <div style={{ margin: "2rem 0rem" }}>
-              <label>
-                Hayvansal Ürün:
-                <input
-                  type="text"
-                  name="animalProduct"
-                  value={formData.animalProduct}
-                  onChange={handleChange}
-                  required
-                />
               </label>
             </div>
 
@@ -433,18 +369,6 @@ const AdminProjeDuzenle = () => {
                 <textarea
                   name="titleContent"
                   value={formData.titleContent}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
-            </div>
-
-            <div>
-              <label>
-                Uzun Açıklama:
-                <textarea
-                  name="content"
-                  value={formData.content}
                   onChange={handleChange}
                   required
                 />

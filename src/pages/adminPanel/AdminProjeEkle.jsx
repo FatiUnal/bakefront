@@ -4,6 +4,7 @@ import axios from "axios";
 import { BASE_URL } from "../../config/api";
 import { useNavigate } from "react-router-dom";
 import Loading from "../loading/Loading";
+import pdfImg from "/images/Icon/adobePDF.webp";
 
 const AdminProjeEkle = () => {
   const navigate = useNavigate();
@@ -11,15 +12,10 @@ const AdminProjeEkle = () => {
   const [images, setImages] = useState([]);
   const [imgKapak, setImgKapak] = useState(null);
   const [formData, setFormData] = useState({
-    shelfLife: "",
-    netQuantity: "",
     title: "",
     categoryName: "",
     type: "bake",
-    animalProduct: "",
     titleContent: "",
-    content: "",
-    portion: "",
   });
   const [isLoading, setIsloading] = useState(false);
 
@@ -139,11 +135,10 @@ const AdminProjeEkle = () => {
                 }}
                 className="baslikAndButton"
               >
-                <h4>Ürün Resimleri Yükle</h4>
+                <h4>Ürün PDF'ini Yükle</h4>
                 <input
                   type="file"
-                  accept="image/*"
-                  multiple
+                  accept="application/pdf"
                   onChange={handleImageUpload}
                   className="upload-input"
                   id="file-input"
@@ -161,9 +156,7 @@ const AdminProjeEkle = () => {
                       borderRadius: "5px",
                     }}
                   >
-                    {images.length > 0
-                      ? `Resim Ekle: ${images.length}`
-                      : "Resim Seç"}
+                    PDF Seç
                   </label>
                 </div>
               </div>
@@ -172,10 +165,7 @@ const AdminProjeEkle = () => {
                 {images.map((image, index) => {
                   return (
                     <div key={index} className="image-container">
-                      <img
-                        src={URL.createObjectURL(image)}
-                        alt={`Uploaded Preview ${index}`}
-                      />
+                      <img src={pdfImg} alt={`Uploaded Preview ${index}`} />
                       <button
                         type="button"
                         className="remove-button"
@@ -284,61 +274,10 @@ const AdminProjeEkle = () => {
                   <option value="">Seri Seçiniz</option>
                   <option value="cup">Cup Serisi</option>
                   <option value="cake">Cake Serisi</option>
-                  <option value="others">Diğerleri</option>
+                  <option value="cheesecake">Cake Serisi</option>
+                  <option value="bakeand">Bake And Serisi</option>
                 </select>
                 <input type="hidden" name="type" value="bake" />
-              </label>
-            </div>
-
-            <div>
-              <label>
-                Miktar (Gr):
-                <input
-                  type="text"
-                  name="netQuantity"
-                  value={formData.netQuantity}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
-            </div>
-
-            <div>
-              <label>
-                Raf Ömrü:
-                <input
-                  type="text"
-                  name="shelfLife"
-                  value={formData.shelfLife}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
-            </div>
-
-            <div>
-              <label>
-                Porsiyon:
-                <input
-                  type="text"
-                  name="portion"
-                  value={formData.portion}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
-            </div>
-
-            <div style={{ margin: "2rem 0rem" }}>
-              <label>
-                Hayvansal Ürün:
-                <input
-                  type="text"
-                  name="animalProduct"
-                  value={formData.animalProduct}
-                  onChange={handleChange}
-                  required
-                />
               </label>
             </div>
 
@@ -348,18 +287,6 @@ const AdminProjeEkle = () => {
                 <textarea
                   name="titleContent"
                   value={formData.titleContent}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
-            </div>
-
-            <div>
-              <label>
-                Uzun Açıklama:
-                <textarea
-                  name="content"
-                  value={formData.content}
                   onChange={handleChange}
                   required
                 />

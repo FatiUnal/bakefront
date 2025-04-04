@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom";
 import "./TeamListCard.scss";
 function TeamlisCard({ proje }) {
   return (
     <li className="glide__slide">
-      <Link to={`/urunler/${proje.id}`} className="card">
+      <a href={proje.images[0]} className="card">
         <div className="img">
           <img src={proje.coverImage} alt="" />
         </div>
@@ -14,7 +13,7 @@ function TeamlisCard({ proje }) {
             <p className="desc">{proje.titleContent}</p>
           </div>
         </div>
-      </Link>
+      </a>
     </li>
   );
 }

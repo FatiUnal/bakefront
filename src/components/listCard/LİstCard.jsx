@@ -4,23 +4,18 @@ import "./ListCard.scss";
 const LİstCard = ({ proje }) => {
   return (
     <div className="projeCard">
-      <Link to={`/urunler/${proje.id}`} className="img">
-        <img src={proje.coverImage} alt="" />
-      </Link>
+      <a href={proje.images[0]} className="img">
+        <img src={proje.coverImage} alt="kapakresmi" />
+      </a>
       <div className="detayCard">
         <div className="desc">
-          <Link to={`/urunler/${proje.id}`} className="title">
+          <a href={proje.images[0]} className="title">
             <h3>{proje.title}</h3>
-          </Link>
+          </a>
           <div className="text">
             <p>{proje.titleContent}</p>
           </div>
         </div>
-        {/* <div className="buttonCard">
-          <Link to={`/urunler/${proje.id}`}>
-            <button>Ürüne Git</button>
-          </Link>
-        </div> */}
       </div>
     </div>
   );

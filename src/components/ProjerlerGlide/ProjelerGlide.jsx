@@ -33,7 +33,7 @@ const ProjelerGlide = ({ projeler, perView }) => {
     <div className="glideDiger">
       <div className="glide__track" data-glide-el="track">
         <ul className="glide__slides">
-          {projeler.map((proje, index) => (
+          {projeler?.map((proje, index) => (
             <TeamListCard key={index} proje={proje} />
           ))}
         </ul>
@@ -50,8 +50,9 @@ const ProjelerGlide = ({ projeler, perView }) => {
       </div>
 
       <div className="glide__bullets" data-glide-el="controls[nav]">
-        {projeler.map((item, index) => (
+        {projeler?.map((item, index) => (
           <button
+            key={index}
             className="glide__bullet"
             data-glide-dir={`=${index}`}
           ></button>

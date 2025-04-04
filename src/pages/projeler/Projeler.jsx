@@ -7,24 +7,25 @@ import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
 import { BASE_URL } from "../../config/api";
 import Loading from "../loading/Loading";
 import Pagination from "../../components/Pagination/Pagination";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Projeler = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [filteredProjects, setFilteredProjects] = useState([]);
   const [projeler, setProjeler] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentItems, setCurrentItems] = useState([]);
+  const { categoryname } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${BASE_URL}/api/v1/post/small?page=0&size=100`
+          `${BASE_URL}/api/v1/post/category?category=${categoryname}`
         );
 
         const data = response.data;
         setProjeler(data);
-        setFilteredProjects(data);
 
         setTimeout(() => {
           setLoading(false);
@@ -35,23 +36,15 @@ const Projeler = () => {
     };
 
     fetchData();
-  }, []);
+  }, [categoryname]);
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen); // Sidebar'ı açma ve kapama işlemi
   };
 
-  const filterByRoomCount = (categoryName) => {
-    if (categoryName) {
-      const filtered = projeler.filter(
-        (proje) => proje.categoryName === categoryName
-      );
-      setFilteredProjects(filtered);
-      setSidebarOpen(false);
-    } else {
-      setFilteredProjects(projeler); // Tüm projeleri geri yükler
-      setSidebarOpen(false);
-    }
+  const filterByRoomCount = (yeniCategory) => {
+    navigate(`/kategoriler/${yeniCategory}`); // Kesin yolu kullan
+    setSidebarOpen(false);
   };
 
   if (loading) {
@@ -70,16 +63,7 @@ const Projeler = () => {
               </div>
               <div className="listCategories">
                 <ul>
-                  <li>
-                    <button onClick={() => filterByRoomCount(null)}>
-                      <span>Tüm Ürünler</span>
-                      <ChevronRightOutlinedIcon
-                        style={{ color: "black", fontSize: "1rem" }}
-                      />
-                    </button>
-                  </li>
-
-                  <li>
+                  <li className={categoryname === "cup" ? "selected" : ""}>
                     <button onClick={() => filterByRoomCount("cup")}>
                       <span>Cup Serisi</span>
                       <ChevronRightOutlinedIcon
@@ -88,7 +72,7 @@ const Projeler = () => {
                     </button>
                   </li>
 
-                  <li>
+                  <li className={categoryname === "cake" ? "selected" : ""}>
                     <button onClick={() => filterByRoomCount("cake")}>
                       <span>Cake Serisi</span>
                       <ChevronRightOutlinedIcon
@@ -97,9 +81,20 @@ const Projeler = () => {
                     </button>
                   </li>
 
-                  <li>
-                    <button onClick={() => filterByRoomCount("others")}>
-                      <span>Diğerleri</span>
+                  <li
+                    className={categoryname === "cheesecake" ? "selected" : ""}
+                  >
+                    <button onClick={() => filterByRoomCount("cheesecake")}>
+                      <span>Cheesecake Serisi</span>
+                      <ChevronRightOutlinedIcon
+                        style={{ color: "black", fontSize: "1rem" }}
+                      />
+                    </button>
+                  </li>
+
+                  <li className={categoryname === "bakeand" ? "selected" : ""}>
+                    <button onClick={() => filterByRoomCount("bakeand")}>
+                      <span>Bake And Serisi</span>
                       <ChevronRightOutlinedIcon
                         style={{ color: "black", fontSize: "1rem" }}
                       />
@@ -136,7 +131,7 @@ const Projeler = () => {
               <hr />
             </div>
             <div className="list">
-              {filteredProjects.length > 0 ? (
+              {projeler.length > 0 ? (
                 currentItems.map((proje, index) => (
                   <LİstCard key={index} proje={proje} />
                 ))
@@ -147,7 +142,7 @@ const Projeler = () => {
 
             <Pagination
               itemsPerPage={8}
-              items={filteredProjects}
+              items={projeler}
               setCurrentItems={setCurrentItems}
             />
           </div>

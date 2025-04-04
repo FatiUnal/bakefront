@@ -5,7 +5,6 @@ import Anasayfa from "./pages/anasayfa/Anasayfa.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import FooterTop from "./components/FooterTop/FooterTop.jsx";
 import Projeler from "./pages/projeler/Projeler.jsx";
-import ProjeDetay from "./pages/projeDetaySayfası/ProjeDetay.jsx";
 import Iletisim from "./pages/iletisim/Iletisim.jsx";
 import Hakkimizda from "./pages/Hakkımizda/Hakkimizda.jsx";
 import AdminDashboard from "./pages/adminPanel/AdminDashboard.jsx";
@@ -18,6 +17,7 @@ import { AuthProvider } from "./context/AuthContext.jsx";
 import ProtectedRoute from "./context/ProtectedRoute.jsx";
 import Unauthorized from "./pages/yetkisizGiris/Unauthorized.jsx";
 import ScrollToTop from "./components/scrollTop/ScrollToTop.jsx";
+import Categories from "./pages/Categories/Categories.jsx";
 
 function App() {
   return (
@@ -26,8 +26,8 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Anasayfa />} />
-        <Route path="/urunler" element={<Projeler />} />
-        <Route path="/urunler/:id" element={<ProjeDetay />} />
+        <Route path="/kategoriler" element={<Categories />} />
+        <Route path="/kategoriler/:categoryname" element={<Projeler />} />
         <Route path="/iletisim" element={<Iletisim />} />
         <Route path="/hakkimizda" element={<Hakkimizda />} />
         <Route path="/admin-login" element={<AdminLogin />} />

@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
 import "./CardItem.scss";
-const CardItem = ({ title, desc, buttonText, img }) => {
+const CardItem = ({ title, desc, buttonText, img, link }) => {
   return (
     <div className="cardItemm">
-      <div className="card-content">
+      <Link to={`/kategoriler/${link}`} className="card-content">
         <img src={img} alt="Peynir Çeşitleri" className="product-image" />
         <div className="text-content">
           <h2>{title}</h2>
           <p>{desc}</p>
-          <Link to="/urunler" className="button green-button">
+          <Link to={`/kategoriler/${link}`} className="button green-button">
             {buttonText}
           </Link>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };
