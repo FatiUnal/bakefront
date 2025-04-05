@@ -16,7 +16,7 @@ const AdminProjeSil = () => {
         const response = await axios.get(
           `${BASE_URL}/api/v1/post/small?page=0&size=1000`
         );
-        console.log("Data:", response.data); // Çekilen veriler burada
+
         setProjeler(response.data);
         setTimeout(() => {
           setIsLoading(false);

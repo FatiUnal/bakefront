@@ -73,9 +73,6 @@ const AdminProjeEkle = () => {
             },
           }
         );
-
-        console.log("Resimler yüklendi:", responseImages.data);
-        console.log("Kapak Resmi Yüklendi:", kapakImages.data);
       }
 
       setTimeout(() => {
@@ -274,7 +271,7 @@ const AdminProjeEkle = () => {
                   <option value="">Seri Seçiniz</option>
                   <option value="cup">Cup Serisi</option>
                   <option value="cake">Cake Serisi</option>
-                  <option value="cheesecake">Cake Serisi</option>
+                  <option value="cheesecake">cheesecake Serisi</option>
                   <option value="bakeand">Bake And Serisi</option>
                 </select>
                 <input type="hidden" name="type" value="bake" />

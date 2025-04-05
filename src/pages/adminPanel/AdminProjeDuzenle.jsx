@@ -53,8 +53,6 @@ const AdminProjeDuzenle = () => {
             setIsloading(false);
           }, 500);
         }
-
-        console.log(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -90,8 +88,6 @@ const AdminProjeDuzenle = () => {
       });
 
       if (imgKapak !== initialKapakImages) {
-        console.log("kapak degisti");
-
         if (imgKapak === null) {
           const responseKapakDelete = await axios.delete(
             `${BASE_URL}/api/v1/image/cover-delete?postId=${id}`,
@@ -101,7 +97,6 @@ const AdminProjeDuzenle = () => {
               },
             }
           );
-          console.log(responseKapakDelete.data);
         } else {
           const kapakData = new FormData();
           kapakData.append("image", imgKapak);
@@ -117,7 +112,6 @@ const AdminProjeDuzenle = () => {
               },
             }
           );
-          console.log(kapakImagesResponse);
         }
       }
 
@@ -138,7 +132,6 @@ const AdminProjeDuzenle = () => {
 
         if (removedImages.length > 0) {
           const formDataDeleted = new FormData();
-          console.log("silinen", removedImages);
           removedImages.forEach((image) => {
             formDataDeleted.append("imagesId", image.id);
           });
@@ -356,7 +349,7 @@ const AdminProjeDuzenle = () => {
                   <option value="">Seri Seçiniz</option>
                   <option value="cup">Cup Serisi</option>
                   <option value="cake">Cake Serisi</option>
-                  <option value="cheesecake">Cake Serisi</option>
+                  <option value="cheesecake">Cheesecake Serisi</option>
                   <option value="bakeand">Bake And Serisi</option>
                 </select>
                 <input type="hidden" name="type" value="bake" />
