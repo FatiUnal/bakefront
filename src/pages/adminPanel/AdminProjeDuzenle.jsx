@@ -219,10 +219,10 @@ const AdminProjeDuzenle = () => {
                 }}
                 className="baslikAndButton"
               >
-                <h4>Ürün PDF'ini Düzenle</h4>
+                <h4>Ürün PDFini Düzenle</h4>
                 <input
                   type="file"
-                  accept="application/pdf"
+                  accept="application/pdf,image/*"
                   onChange={handleImageUpload}
                   className="upload-input"
                   id="file-input"

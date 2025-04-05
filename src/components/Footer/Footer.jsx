@@ -54,14 +54,12 @@ const Footer = () => {
                     +90 506 167 12 55
                   </span>
                 </a>
-                <span>  /</span>
+                <span> /</span>
                 <a href="tel:+905316457947">
-                <span style={{ marginRight: "-0.5rem" }} className="ici">
+                  <span style={{ marginRight: "-0.5rem" }} className="ici">
                     +90 531 645 79 47
                   </span>
                 </a>
-                
-                
               </div>
             </li>
 
@@ -96,7 +94,7 @@ const Footer = () => {
 
       <div className="container">
         <p style={{ fontSize: "0.85rem" }}>
-          Copyright 2024 © Bake & Bond. Bütün Hakları Saklıdır.
+          Copyright 2025 © Bake & Bond. Bütün Hakları Saklıdır.
         </p>
       </div>
     </footer>
