@@ -5,6 +5,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import MenuBookIcon from "@mui/icons-material/MenuBook";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,27 +25,22 @@ const Header = () => {
     setIsMenuOpen(false);
   }, [location]);
 
-  const handleDownload = (e) => {
-    e.preventDefault(); // Linkin normal davranışını durdur
-    const link = document.createElement("a");
-    link.href =
-      "https://bakeandbondpatisserie.com/api/v1/upload/bake/images/49/6826c87b-5010-4919-90f4-389f84c0c7ae.pdf";
-    link.setAttribute("download", "file");
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
     <header className="header">
       <div className="headerTop">
         <div className="container">
           <div className="headerTopWrapper">
-            <div>
-              <span style={{ cursor: "pointer" }} onClick={handleDownload}>
-                <span>Kataloğu İndir</span>
-              </span>
-            </div>
+            <a
+              className="buttonKatalogContent"
+              style={{ cursor: "pointer" }}
+              target="_blank"
+              href="https://bakeandbondpatisserie.com/api/v1/upload/bake/images/49/6826c87b-5010-4919-90f4-389f84c0c7ae.pdf"
+              download
+            >
+              <MenuBookIcon className="icon" />
+              <span className="buttonKatalog">Kataloğu İndir</span>
+            </a>
+
             <div className="iconss">
               <span className="none">Bizlerle iletişime geçin</span>
               <a

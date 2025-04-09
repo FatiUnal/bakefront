@@ -194,9 +194,7 @@ const Anasayfa = () => {
                 <img className="seccond" src={kolaj3} alt="" />
               </div>
               <div className="textContainer">
-                <h3 className="projectName">
-                  | Her biri bizim için değerli...
-                </h3>
+                <h3 className="projectName">| Kataloğumuzu İndirin</h3>
                 <h1>
                   <i>&apos;Bake And&apos;</i> Serisi
                 </h1>
@@ -208,7 +206,16 @@ const Anasayfa = () => {
                   sağlıyoruz.
                 </p>
                 <div className="button">
-                  <Link to={"/kategoriler"}>Ürünlere Git</Link>
+                  <a
+                    style={{ cursor: "pointer" }}
+                    target="_blank"
+                    download
+                    href={
+                      "https://bakeandbondpatisserie.com/api/v1/upload/bake/images/49/6826c87b-5010-4919-90f4-389f84c0c7ae.pdf"
+                    }
+                  >
+                    Kataloğu İndir
+                  </a>
                 </div>
               </div>
             </div>

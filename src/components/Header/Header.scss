@@ -137,3 +137,19 @@
     }
   }
 }
+
+.buttonKatalogContent {
+  display: flex;
+  align-items: center;
+
+  .icon {
+    color: whitesmoke;
+    font-size: 1.4rem;
+  }
+
+  .buttonKatalog {
+    color: white;
+    border-radius: 8px;
+    padding: 4px 8px;
+  }
+}

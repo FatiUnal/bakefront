@@ -107,6 +107,7 @@ const MrGlide = ({ onImageClick, images }) => {
       <div className="glide__bullets" data-glide-el="controls[nav]">
         {images.map((item, index) => (
           <button
+            key={index}
             className="glide__bullet"
             data-glide-dir={`=${index}`}
           ></button>
