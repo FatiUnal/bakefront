@@ -351,6 +351,7 @@ const AdminProjeDuzenle = () => {
                   <option value="cake">Cake Serisi</option>
                   <option value="cheesecake">Cheesecake Serisi</option>
                   <option value="bakeand">Bake And Serisi</option>
+                  <option value="pdf">PDF</option>
                 </select>
                 <input type="hidden" name="type" value="bake" />
               </label>

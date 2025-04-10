@@ -108,6 +108,7 @@ const Anasayfa = () => {
         "Teslimatlar soğuk zincir kurallarına uygun olarak yapılır. Pastalar, tazeliğini koruması için buzdolabında muhafaza edilmeli ve tüketim tarihi içinde tüketilmelidir.",
     },
   ];
+
   const [openIndex, setOpenIndex] = useState(null);
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -211,7 +212,7 @@ const Anasayfa = () => {
                     target="_blank"
                     download
                     href={
-                      "https://bakeandbondpatisserie.com/api/v1/upload/bake/images/49/6826c87b-5010-4919-90f4-389f84c0c7ae.pdf"
+                      "https://bakeandbondpatisserie.com/api/v1/upload/bake/images/49/b4711c7f-5887-41b3-8322-fd22c8f9f8be.pdf"
                     }
                   >
                     Kataloğu İndir
