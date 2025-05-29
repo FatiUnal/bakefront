@@ -30,13 +30,13 @@ const Footer = () => {
           <hr />
           <ul className="footerHizmet">
             <li>
-              <span>Oteller İçin Toptan Sipariş</span>
+              <span>Oteller İçin Sipariş</span>
             </li>
             <li>
-              <span>Cafeler İçin Toptan Sipariş</span>
+              <span>Cafeler İçin Sipariş</span>
             </li>
             <li>
-              <span>Restoranlar İçin Toptan Sipariş</span>
+              <span>Restoranlar İçin Sipariş</span>
             </li>
           </ul>
         </div>
