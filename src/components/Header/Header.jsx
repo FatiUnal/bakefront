@@ -30,16 +30,7 @@ const Header = () => {
       <div className="headerTop">
         <div className="container">
           <div className="headerTopWrapper">
-            <a
-              className="buttonKatalogContent"
-              style={{ cursor: "pointer" }}
-              target="_blank"
-              href="https://bakeandbondpatisserie.com/api/v1/upload/bake/images/49/b4711c7f-5887-41b3-8322-fd22c8f9f8be.pdf"
-              download
-            >
-              <MenuBookIcon className="icon" />
-              <span className="buttonKatalog">Kataloğu İndir</span>
-            </a>
+            <span className="buttonKatalog">Zamansız bir dokunuş...</span>
 
             <div className="iconss">
               <span className="none">Bizlerle iletişime geçin</span>
@@ -107,6 +98,18 @@ const Header = () => {
                   >
                     İletişim
                   </Link>
+                </li>
+                <li className="menu-list-item">
+                  <a
+                    className="menu-link"
+                    onClick={closeMenu}
+                    style={{ cursor: "pointer" }}
+                    target="_blank"
+                    href="https://bakeandbondpatisserie.com/api/v1/upload/bake/images/49/b4711c7f-5887-41b3-8322-fd22c8f9f8be.pdf"
+                    download
+                  >
+                    Kataloğu İndir
+                  </a>
                 </li>
               </ul>
             </nav>
