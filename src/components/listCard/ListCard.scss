@@ -1,6 +1,6 @@
 .projeCard {
   height: auto;
-  width: calc(50% - 1rem);
+  width: 100%;
   gap: 1rem;
   display: flex;
   flex-direction: column;
@@ -74,7 +74,6 @@
 
   @media (max-width: 500px) {
     flex-direction: column;
-    width: 100%;
     .img,
     .detayCard {
       width: 100%;

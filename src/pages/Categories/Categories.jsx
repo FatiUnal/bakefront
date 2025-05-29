@@ -33,6 +33,22 @@ const Categories = () => {
             categoryName={"Bake And Serisi"}
             img={bakeandseries}
           />
+          <a
+            className="categorycard"
+            target="_blank"
+            href="https://bakeandbondpatisserie.com/api/v1/upload/bake/images/49/b4711c7f-5887-41b3-8322-fd22c8f9f8be.pdf"
+            download
+          >
+            <div className="categoryContent">
+              <h3>Kataloğu İndirin</h3>
+              <div className="backgroundImg">
+                <img
+                  src={"/images/kategoriResimleri/katalog.jpg"}
+                  alt="kategori"
+                />
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </div>

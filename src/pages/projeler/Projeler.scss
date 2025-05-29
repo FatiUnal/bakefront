@@ -81,11 +81,8 @@
       flex: 8;
 
       .list {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        column-gap: 2rem;
-        row-gap: 2.5rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
 
         .noDaire {
           text-align: center;
@@ -135,5 +132,13 @@
 
   @media (max-width: 768px) {
     margin-top: 110px;
+
+    .contentProjeler {
+      .projeList {
+        .list {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
   }
 }
