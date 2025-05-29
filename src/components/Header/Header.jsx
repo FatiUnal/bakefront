@@ -99,7 +99,7 @@ const Header = () => {
                     İletişim
                   </Link>
                 </li>
-                <li className="menu-list-item">
+                {/* <li className="menu-list-item">
                   <a
                     className="menu-link"
                     onClick={closeMenu}
@@ -110,7 +110,7 @@ const Header = () => {
                   >
                     Kataloğu İndir
                   </a>
-                </li>
+                </li> */}
               </ul>
             </nav>
 

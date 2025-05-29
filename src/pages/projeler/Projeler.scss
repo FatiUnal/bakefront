@@ -36,11 +36,13 @@
           gap: 0.2rem;
 
           li {
-            button {
+            button,
+            a {
               width: 100%;
               background-color: transparent;
               &:hover {
                 background-color: rgb(215, 215, 215);
+                border-radius: 5px;
               }
 
               display: flex;

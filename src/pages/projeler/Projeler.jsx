@@ -8,6 +8,7 @@ import { BASE_URL } from "../../config/api";
 import Loading from "../loading/Loading";
 import Pagination from "../../components/Pagination/Pagination";
 import { useNavigate, useParams } from "react-router-dom";
+import BrowserUpdatedIcon from "@mui/icons-material/BrowserUpdated";
 
 const Projeler = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -99,6 +100,21 @@ const Projeler = () => {
                         style={{ color: "black", fontSize: "1rem" }}
                       />
                     </button>
+                  </li>
+
+                  <li className="menu-list-item">
+                    <a
+                      className="menu-link"
+                      style={{ cursor: "pointer" }}
+                      target="_blank"
+                      href="https://bakeandbondpatisserie.com/api/v1/upload/bake/images/49/b4711c7f-5887-41b3-8322-fd22c8f9f8be.pdf"
+                      download
+                    >
+                      <span>Kataloğu İndir</span>
+                      <BrowserUpdatedIcon
+                        style={{ color: "black", fontSize: "1rem" }}
+                      />
+                    </a>
                   </li>
                 </ul>
               </div>
